@@ -4,17 +4,17 @@ A simple Flask-based web application that recommends books based on your mood us
 
 ---
 
-## 🌟 Features
+##  Features
 
-- ✅ Mood-based book recommendation
-- ✅ Clean, user-friendly interface
-- ✅ Uses Goodreads tags to map moods
-- ✅ No external API usage – fully local
-- ✅ Extendable to foundation models (T5, BERT)
+-  Mood-based book recommendation
+-  Clean, user-friendly interface
+-  Uses Goodreads tags to map moods
+-  No external API usage – fully local
+-  Extendable to foundation models (T5, BERT)
 
 ---
 
-## 🧠 How It Works
+##  How It Works
 
 1. User enters a mood (e.g., *happy*, *sad*, *romantic*)
 2. The system looks for tags in the dataset that match the mood
@@ -23,7 +23,7 @@ A simple Flask-based web application that recommends books based on your mood us
 
 ---
 
-## 📂 Dataset Used
+##  Dataset Used
 
 - **books.csv** – Basic book metadata
 - **book_tags.csv** – Links books to tags using tag IDs
@@ -33,7 +33,7 @@ A simple Flask-based web application that recommends books based on your mood us
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 | Layer         | Technology        |
 |---------------|-------------------|
