@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mood-Based Book Recommender</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #c1a1fd, #93ceea);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #2e3c58;
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #2196f3;
+            outline: none;
+            box-shadow: 0 0 5px rgba(33, 150, 243, 0.3);
+        }
+
+        input[type="submit"] {
+            padding: 15px;
+            background-color: #4a00e0;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #7f00ff;
+        }
+
+        .recommendation {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f3f4f6;
+            border-left: 6px solid #4caf50;
+            border-radius: 12px;
+            font-size: 18px;
+            color: #333;
+        }
+
+
+        @media (max-width: 600px) {
+            h2 {
+                font-size: 24px;
+            }
+
+            input[type="submit"], input[type="text"] {
+                font-size: 16px;
+            }
+
+            .recommendation {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>What's Your Mood Today?</h2>
+        <form method="POST" action="/recommend">
+            <input type="text" name="mood" placeholder="e.g., happy, sad, inspired" required>
+            <input type="submit" value="Recommend Book">
+        </form>
+
+        {% if recommendation is not none %}
+            {% if recommendation %}
+            <div class="recommendation">
+                {{ recommendation }}
+            </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
